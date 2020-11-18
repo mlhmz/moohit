@@ -1,38 +1,92 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+* {
+  font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
+  
+}
+
+
+
+.loader-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+
+}
+.loader:after {
+  content: "🐮";
+  display: block;
+  font-size: 64px;
   text-align: center;
+  
+  animation: loader 1.2s linear infinite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.post-section {
+  width: 25%;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.name-section {
+  width: 25%;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-button {
+  cursor: pointer;
+  text-align: right;
+  color: grey;
+  font-weight: 700;
+  transition: 0.3s;
+  margin: 1vmin;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-button:hover {
+  color: rgb(255, 208, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
+.logo {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  top: 2%;
+  left: 90%;
+}
+
+.logout-button {
+  display: inline-block;
+}
+
+textarea {
+  margin: 5px;
+  border: none;
+  border-bottom: solid grey 2px;
+  transition: 0.3s;
+  width: 100%;
+  padding: 10px;
+}
+
+textarea:focus {
+  
+  outline:none;
+  border-bottom: solid rgb(255, 208, 0) 2px;
+}
+
+@keyframes loader {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
