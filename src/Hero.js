@@ -6,13 +6,14 @@ import Messages from './Messages';
 import Namesection from './namesection';
 
 const Hero = ({
-    handleLogout, 
+    handleLogout,
     user,
     setName,
     name,
     message,
     setMessage,
-    hasName
+    hasName,
+
 }) => {
     return (
         <section className="hero">
@@ -21,11 +22,16 @@ const Hero = ({
             <a className="nav-button">Settings</a>
             <a className="nav-button" onClick={handleLogout}>Logout</a>
             </div>
-            <Namesection setName={setName} name={name} user={user} />
-            <Postsection user={user} message={message} setMessage={message} hasName = {hasName} />
+            {hasName ?
+                <Postsection user={user} message={message} setMessage={message} hasName = {hasName} />
+            :
+                <Namesection setName={setName} name={name} user={user} />
+            }
+
+
             <Messages user={user} />
         </section>
-    ); 
+    );
 };
 
 export default Hero;

@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useReducer} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import fire from './fire';
@@ -15,7 +15,7 @@ function App() {
   const [passwordError, setPasswordError] = useState('');
   const [hasAccount, setHasAccount] = useState(true);
   const [message, setMessage] = useState('');
-  const [hasName] = useState(false);
+  const [hasName, setHasName] = useState(false);
 
   const clearInputs = () => {
     setEmail('');
@@ -47,7 +47,7 @@ function App() {
             setPasswordError(err.message);
             break;
         }
-      });  
+      });
   };
 
 
@@ -59,7 +59,7 @@ function App() {
       .catch(err => {
         switch(err.code){
           case "auth/email-already-in-use":
-          
+
           case "auth/invalid-email":
 
           case "auth/weak-password":
@@ -79,45 +79,47 @@ function App() {
         clearInputs();
         setUser(user);
         if (user.displayName != null) {
-          hasName = true;
+          setHasName(!hasName)
         }
-        
       } else {
         setUser("");
       }
     });
   };
 
+
+
   useEffect(() => {
     authListener();
   }, []);
 
+
+
   return (
     <div className="App">
         {user ? (
-          <Hero 
-          handleLogout={handleLogout} 
-          user={user} 
+          <Hero
+          handleLogout={handleLogout}
+          user={user}
           setName={setName}
           name={name}
           message={message}
           setMessage={setMessage}
-          hasName={hasName}
 
           />
-          
-          
-          
+
+
+
         ) : (
         /*<div className="loader-container"><div id="loader" className="loader"></div></div>*/
-          <Login 
-          email={email} 
-          setEmail={setEmail} 
+          <Login
+          email={email}
+          setEmail={setEmail}
           name={name}
           setName={setName}
-          password={password} 
-          setPassword={setPassword} 
-          handleLogin={handleLogin} 
+          password={password}
+          setPassword={setPassword}
+          handleLogin={handleLogin}
           handleSignup={handleSignup}
           hasAccount={hasAccount}
           setHasAccount={setHasAccount}
