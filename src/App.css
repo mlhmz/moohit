@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
 
 * {
   font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
@@ -32,6 +33,7 @@
 .post-section {
   width: 25%;
   margin: auto;
+  margin-top: 5%;
 }
 
 .name-section {
@@ -42,25 +44,59 @@
 .nav-button {
   cursor: pointer;
   text-align: right;
-  color: grey;
+  color: black;
   font-weight: 700;
   transition: 0.3s;
   margin: 1vmin;
 }
 
-.nav-button:hover {
-  color: rgb(255, 208, 0);
-}
+
 
 .logo {
   font-size: 32px;
   cursor: pointer;
+  display: inline;
+  width: 40px;
+  height: auto;
+  vertical-align: middle;
+  
+}
+
+.title {
+  margin: 15px;
+  display: inline;
+  font-weight: 900;
+  font-family: Lato;
+  vertical-align: middle;
 }
 
 .nav {
-  position: absolute;
-  top: 2%;
-  left: 90%;
+  background-color: #FFE74C;
+  padding: 5px;
+  width: 100%;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+}
+
+.nav p {
+  vertical-align: middle;
+}
+
+
+.nav-buttons {
+  vertical-align: middle;
+  margin-right: 15px;
+  height: 100%;
+  float: right;
+  display: flex;
+  
+}
+
+
+.nav-button:hover {
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px grey;
 }
 
 .logout-button {
@@ -79,7 +115,35 @@ textarea {
 textarea:focus {
   
   outline:none;
-  border-bottom: solid rgb(255, 208, 0) 2px;
+  border-bottom: solid #FFE74C 2px;
+}
+
+.messages {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.message {
+  width: 50%;
+  margin: auto;
+  background-color: white;
+  box-shadow: 1px 1px 10px #888888;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.message:hover {
+  background-color: #FFE74C;
+}
+
+.upvote {
+  width: 15px;
+  height: auto;
 }
 
 @keyframes loader {

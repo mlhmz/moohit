@@ -22,15 +22,16 @@ input {
 
 input:focus {
     outline:none;
-    border-bottom: solid rgb(255, 208, 0) 2px;
+    border-bottom: solid #FFE74C 2px;
 }
 
 button {
     border: none;
     border-radius: 5px;
-    background-color: rgb(255, 208, 0);
+    background-color: #FFE74C;
     padding: 10px;
     margin: 5px;
+    transition: 0.3s;
 }
 
 .loginBtn {
@@ -40,7 +41,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(255, 184, 30);
+    box-shadow: 1px 1px 3px grey;
 }
 
 p {
@@ -49,6 +50,6 @@ p {
 }
 
 span {
-    color: rgb(255, 208, 0);
+    color: #FFE74C;
     cursor: pointer;
 }
