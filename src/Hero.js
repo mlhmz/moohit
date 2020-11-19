@@ -12,7 +12,7 @@ const Hero = ({
     name,
     message,
     setMessage,
-    hasName,
+    hasName
 
 }) => {
     return (
@@ -27,8 +27,6 @@ const Hero = ({
             :
                 <Namesection setName={setName} name={name} user={user} />
             }
-
-
             <Messages user={user} />
         </section>
     );

@@ -81,6 +81,7 @@ function App() {
         if (user.displayName != null) {
           setHasName(!hasName)
         }
+        console.log("AUTH SUCCESS!")
       } else {
         setUser("");
       }
@@ -105,6 +106,7 @@ function App() {
           name={name}
           message={message}
           setMessage={setMessage}
+          hasName={hasName}
 
           />
 

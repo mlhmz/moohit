@@ -39,7 +39,7 @@ function changeName(user, name, hasName, setHasName) {
     user.updateProfile({
         displayName: name
     });
-    console.log(displayName);
+    console.log(user.displayName);
 
 
 

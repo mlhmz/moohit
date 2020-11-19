@@ -4,12 +4,17 @@ import fire from './fire';
 class User extends React.Component {
 
 
+
+    
     render() {
         return (
         <section className="User">
             <div className="post-section">
                 <h3>Welcome to Mooh it! {fire.auth().currentUser.displayName}</h3>
-                {textarea()}
+                <textarea
+                    type="text"
+                    placeholder="Message"
+                />
                 <button >Mooooh!</button>
 
             </div>
@@ -17,17 +22,6 @@ class User extends React.Component {
         );
     }
 
-}
-
-
-function textarea() {
-    if (fire.auth().currentUser.displayName != null) {
-        return <textarea
-        type="text"
-        placeholder="Message"
-        />
-    }
-    return
 }
 
 export default User;
