@@ -1,6 +1,8 @@
 # Mooh it! Social Media Web App
 
-## This project is only available on English
+## About the Project
+
+This project is only available on English
 
 Created with Node, React.js and Google Firebase
 
