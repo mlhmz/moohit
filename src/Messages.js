@@ -1,7 +1,7 @@
 import React from 'react';
 import fire from './fire';
 import { useCollectionData } from 'react-firebase-hooks/firestore'
-import upvote from './upvote.svg'
+
 
 const Messages = ({user}) => {
     const postsRef = fire.firestore().collection('posts');
@@ -18,7 +18,7 @@ const Messages = ({user}) => {
     ); 
 
     function Post(props) {
-        const {text, uid, userid, name, likes} = props.message;
+        const {text, name} = props.message;
     return (
     <div onClick={() => Like(fire.auth().currentUser.uid)}className={"message"}>
         <h3>{name}</h3>

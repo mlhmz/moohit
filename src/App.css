@@ -6,8 +6,6 @@
   
 }
 
-
-
 .loader-container {
   position: fixed;
   top: 50%;
@@ -36,9 +34,11 @@
   margin-top: 5%;
 }
 
+
 .name-section {
   width: 25%;
   margin: auto;
+  margin-top: 5%;
 }
 
 .nav-button {
@@ -109,7 +109,36 @@ textarea {
   border-bottom: solid grey 2px;
   transition: 0.3s;
   width: 100%;
-  padding: 10px;
+  height: 100px;
+  resize: none;
+  
+  
+}
+
+/* Scroll */
+textarea::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+textarea::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+textarea::-webkit-scrollbar-thumb
+{
+  background-color: #FFE74C; 
+  background-image: -webkit-linear-gradient(45deg,
+                                            rgba(255, 255, 255, .2) 25%,
+                        transparent 25%,
+                        transparent 50%,
+                        rgba(255, 255, 255, .2) 50%,
+                        rgba(255, 255, 255, .2) 75%,
+                        transparent 75%,
+                        transparent);
 }
 
 textarea:focus {
@@ -152,5 +181,33 @@ textarea:focus {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .name-section {
+    margin-top: 100px;
+  }
+
+  .post-section {
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .post-section {
+    width: 55%;
+  }
+
+  .name-section {
+    width: 55%;
+  }
+
+  .messages { 
+    width: 80%;
+  }
+
+  .message {
+    width: 85%;
   }
 }

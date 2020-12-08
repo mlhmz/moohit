@@ -1,10 +1,8 @@
-import {useState, useEffect, useReducer} from 'react';
-import logo from './logo.svg';
+import {useState, useEffect} from 'react';
 import './App.css';
 import fire from './fire';
 import Login from './Login';
 import Hero from "./Hero";
-import { findAllByDisplayValue } from '@testing-library/react';
 
 function App() {
   const [user, setUser] = useState('');
@@ -35,11 +33,11 @@ function App() {
       .auth()
       .signInWithEmailAndPassword(email,password)
       .catch(err => {
-        switch(err.code){
+        switch(err.code){ 
           case "auth/invalid-email":
-
+            break;
           case "auth/user-disabled":
-
+            break;
           case "auth/user-not-found":
             setEmailError(err.message);
             break;
@@ -59,9 +57,9 @@ function App() {
       .catch(err => {
         switch(err.code){
           case "auth/email-already-in-use":
-
+            break;
           case "auth/invalid-email":
-
+            break;
           case "auth/weak-password":
             setPasswordError(err.message);
             break;
@@ -71,6 +69,7 @@ function App() {
 
   const handleLogout = () => {
     fire.auth().signOut();
+    window.location.reload();
   };
 
   const authListener = () => {
@@ -81,7 +80,6 @@ function App() {
         if (user.displayName != null) {
           setHasName(!hasName)
         }
-        console.log("AUTH SUCCESS!")
       } else {
         setUser("");
       }
@@ -109,6 +107,7 @@ function App() {
           hasName={hasName}
 
           />
+          
 
 
 
@@ -117,8 +116,6 @@ function App() {
           <Login
           email={email}
           setEmail={setEmail}
-          name={name}
-          setName={setName}
           password={password}
           setPassword={setPassword}
           handleLogin={handleLogin}

@@ -1,7 +1,7 @@
 import Filter from 'bad-words';
 import React from 'react';
 import "./App.css";
-import fire from './fire'
+
 
 const filter = new Filter();
 
@@ -38,8 +38,9 @@ function changeName(user, name, hasName, setHasName) {
     }
     user.updateProfile({
         displayName: name
+    }).then(() => {
+        window.location.reload();
     });
-    console.log(user.displayName);
 
 
 

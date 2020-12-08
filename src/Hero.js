@@ -1,6 +1,4 @@
 import React from 'react';
-import { auth } from 'firebase';
-import fire from './fire';
 import Postsection from './Postsection';
 import Messages from './Messages';
 import Namesection from './namesection';
@@ -19,7 +17,7 @@ const Hero = ({
     return (
         <section className="hero">
             <div className="nav">
-            <img src={logo} className="logo" onClick={() => window.location.reload()} />
+            <img src={logo} alt="cow-twitter-emoji" className="logo" onClick={() => window.location.reload()} />
             <h2 className="title">MOOH IT!</h2>
             <div className="nav-buttons">
             <a onClick={() => alert('Coming soon..')} className="nav-button">Settings</a>
