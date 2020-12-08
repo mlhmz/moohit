@@ -26,6 +26,5 @@ Created with Node, React.js and Google Firebase
 
 In order to use the application, 
 you have to get your Firebase Credentials 
-and put them into a file at /src called "fire.js".
-
-Finally can build and start the Project in Docker or just with nginx.
+and put them into a file at /src called "fire.js". 
+After putting your credentials in you can start the Project in Docker or just with nginx.
